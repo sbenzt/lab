@@ -53,8 +53,17 @@ class CI_Model {
 	 *
 	 * @return	void
 	 */
-	public function __construct()
+
+	private $table;
+	private $pk;
+	private $field_order;
+	private $fields_like;
+
+	public function __construct($data)
 	{
+		foreach ($data as $key => $value) {
+			$this->$key = $value;
+		}
 		log_message('info', 'Model Class Initialized');
 	}
 
@@ -75,6 +84,61 @@ class CI_Model {
 		//	saying 'Undefined Property: system/core/Model.php', it's
 		//	most likely a typo in your model code.
 		return get_instance()->$key;
+	}
+
+	public function get($condition = null){
+		$this->db->select('*');
+		$this->db->from($this->table);
+		
+		if($condition != null || !empty($condition))
+			$this->db->where($condition);
+		$this->db->order_by($this->field_order);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	public function get_id($id = null){
+		if(is_null($id))
+			return false;
+		return $this->get([$this->pk => $id]);
+	}
+
+	//Devuelve los personas segun una cadena
+	public function get_like($string){
+		$this->db->like($this->fields_like[0],$string);
+		unset($this->fields_like[0]);
+		foreach ($this->fields_like as $field) {
+			$this->db->or_like($field,$string);
+		}
+		$query = $this->db->get($this->table);
+		return $query->result();
+	}
+
+
+	public function insert($data){
+		if(empty($data))
+			return false;
+
+		$this->db->insert($this->table,$data);
+		return ($this->db->affected_rows() == 1) ? true : false;
+	}
+
+	public function update($id,$data){
+		if(is_null($id) || empty($data))
+			return false;
+
+		$this->db->where($this->pk,$id);
+		$this->db->update($this->table,$data);
+		return ($this->db->affected_rows() == 1) ? true : false;
+	}
+
+	//elimina segun un id
+	public function delete($id = null){
+		if(is_null($id))
+			return false;
+		$this->db->where($this->pk,$id);
+		$this->db->delete($this->table);
+		return ($this->db->affected_rows() == 1) ? true : false;
 	}
 
 }

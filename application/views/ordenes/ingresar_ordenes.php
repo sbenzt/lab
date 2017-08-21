@@ -22,6 +22,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- BEGIN Portlet PORTLET-->
+                    <?php if($ayuda): ?>
                     <div class="portlet box green">
                         <div class="portlet-title">
                             <div class="caption">
@@ -49,6 +50,7 @@
                             });
                         </script></div>
                     </div>
+                    <?php endif; ?>
                     <!-- END Portlet PORTLET-->
                 </div>
             </div>
@@ -64,35 +66,44 @@
                         </div>
                         <div class="portlet-body form">
 
-                            <form role="form" action="http://keenthemes.com/preview/metronic/theme/admin_3/form_repeater.html?#" class="form-horizontal">
+                            <form role="form" action="" class="form-horizontal">
                                 
-                                <div class="form-group has-error">
+                                <div class="form-group" id="form_protocolo">
                                         <label class="control-label col-md-3" for="inputError">Numero de protocolo</label>
                                         <div class="col-md-4">
-                                            <input type="number" min="1" class="form-control" id="inputError">
+                                            <input type="number" id="protocolo" value="<?=(isset($protocolo)) ? $protocolo : ''?>" min="<?=(isset($protocolo)) ? $protocolo - 5 : ''?>" class="form-control" data-erform="0">
+                                            <span class="help-block"></span>
+                                        </div>
+                                </div>
+
+                                <div class="form-group has-error">
+                                        <label class="control-label col-md-3">Nombre del paciente</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" required>
                                             <span class="help-block"> Please correct the error </span>
                                         </div>
                                 </div>
 
                                 <div class="form-group has-error">
-                                        <label class="control-label col-md-3" for="inputError">Nombre del paciente</label>
+                                        <label class="control-label col-md-3">Apellido del paciente</label>
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" id="inputError">
+                                            <input type="text" class="form-control" required>
                                             <span class="help-block"> Please correct the error </span>
                                         </div>
                                 </div>
 
-                                <div class="form-group has-error">
-                                        <label class="control-label col-md-3" for="inputError">Apellido del paciente</label>
+                                <div class="form-group has-error" id="form_medico">
+                                        <label class="control-label col-md-3">Medico</label>
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" id="inputError">
+                                            <input type="text" class="form-control medico_autcomplete" id="medico">
                                             <span class="help-block"> Please correct the error </span>
                                         </div>
                                 </div>
+
                                 <div class="form-group has-error">
                                         <label class="control-label col-md-3" for="inputError">Obra Social</label>
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" id="inputError">
+                                            <input type="text" class="form-control obra_autcomplete" required>
                                             <span class="help-block"> Please correct the error </span>
                                         </div>
                                 </div>
@@ -121,18 +132,19 @@
                                                 <div data-repeater-item="" class="row" style="">
                                                     <div class="col-md-7">
                                                         <label class="control-label">Name</label>
-                                                        <input type="text" placeholder="Salted Tuna" class="form-control"> </div>
+                                                        <input type="text" placeholder="Ej. Hemograma" class="form-control analisis_autocomplete" required></div>
                                                     <div class="col-md-3">
-                                                        <label for="autoriz" class="control-label">Autorizado</label><br>
-                                                        <input type="checkbox" placeholder="3" class="" id="utoriz">
+                                                        <label for="autoriz" class="control-label text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Autorizar Análisis</label><br>
+                                                        <input type="checkbox" placeholder="3" class="form-control" id="utoriz">
                                                     </div>
                                                     <div class="col-md-1">
-                                                        <label class="control-label">&nbsp;</label>
+                                                        <label class="control-label" style="color:white">XXX</label>
                                                         <a href="javascript:;" data-repeater-delete="" class="btn btn-danger">
                                                             <i class="fa fa-close"></i>
                                                         </a>
                                                     </div>
-                                                </div></div>
+                                                </div>
+                                            </div>
                                             <hr>
                                             <a href="javascript:;" data-repeater-create="" class="btn btn-info mt-repeater-add">
                                                 <i class="fa fa-plus"></i>Agregar nuevo analisis</a>
@@ -160,7 +172,7 @@
                                 <div class="form-actions">
                                     <div class="row">
                                         <div class="col-md-offset-3 col-md-9">
-                                            <button type="submit" class="btn btn-circle green" data-toggle="modal" href="#large">Submit</button>
+                                            <button type="submit" class="btn btn-circle green" data-toggle="modal" href="#large" id="cargar_form">Submit</button>
                                             <button type="button" class="btn btn-circle grey-salsa btn-outline">Cancel</button>
                                         </div>
                                     </div>

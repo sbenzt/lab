@@ -84,7 +84,7 @@
 <script src="../assets/global/plugins/ie8.fix.min.js"></script> 
 <![endif]-->
         <!-- BEGIN CORE PLUGINS -->
-        <script async="" src="<?=base_url('assets/template/vendor/')?>gtm.js.descarga"></script><script async="" src="<?=base_url('assets/template/vendor/')?>analytics.js.descarga"></script><script src="<?=base_url('assets/template/vendor/')?>jquery.min.js.descarga" type="text/javascript"></script>
+        <script src="<?=base_url('assets/template/vendor/')?>jquery-1.12.4.js" type="text/javascript"></script>
         <script src="<?=base_url('assets/template/vendor/')?>bootstrap.min.js.descarga" type="text/javascript"></script>
         <script src="<?=base_url('assets/template/vendor/')?>js.cookie.min.js.descarga" type="text/javascript"></script>
         <script src="<?=base_url('assets/template/vendor/')?>jquery.slimscroll.min.js.descarga" type="text/javascript"></script>
@@ -103,6 +103,8 @@
         <script src="<?=base_url('assets/template/vendor/')?>ui-sweetalert.min.js.descarga" type="text/javascript"></script>
         <script src="<?=base_url('assets/template/vendor/')?>form-repeater.min.js.descarga" type="text/javascript"></script>
         <script src="<?=base_url('assets/template/vendor/')?>components-date-time-pickers.min.js.descarga" type="text/javascript"></script>
+        <script src="<?=base_url('assets/js/')?>jquery.autocomplete.min.js" type="text/javascript"></script>
+        
         <!-- END PAGE LEVEL SCRIPTS -->
         <!-- BEGIN THEME LAYOUT SCRIPTS -->
         <script src="<?=base_url('assets/template/vendor/')?>layout.min.js.descarga" type="text/javascript"></script>

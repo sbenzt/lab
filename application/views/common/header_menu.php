@@ -8,6 +8,7 @@
         <meta content="Preview page of Metronic Admin Theme #3 for ajax bootstrap portlet samples" name="description">
         <meta content="" name="author">
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="<?=base_url('assets/template/vendor/')?>autocomplete.css" rel="stylesheet" type="text/css">
         <link href="<?=base_url('assets/template/vendor/')?>css" rel="stylesheet" type="text/css">
         <link href="<?=base_url('assets/template/vendor/')?>font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="<?=base_url('assets/template/vendor/')?>simple-line-icons.min.css" rel="stylesheet" type="text/css">
@@ -30,7 +31,10 @@
         <link href="<?=base_url('assets/template/vendor/')?>default.min.css" rel="stylesheet" type="text/css" id="style_color">
         <link href="<?=base_url('assets/template/vendor/')?>custom.min.css" rel="stylesheet" type="text/css">
         <!-- END THEME LAYOUT STYLES -->
-        <link rel="shortcut icon" href="http://keenthemes.com/preview/metronic/theme/admin_3/favicon.ico"> </head>
+        <link rel="shortcut icon" href="http://keenthemes.com/preview/metronic/theme/admin_3/favicon.ico"> 
+        <base href="<?=base_url()?>">
+        
+        </head>
     <!-- END HEAD -->
 
     <body class="page-container-bg-solid" style="">

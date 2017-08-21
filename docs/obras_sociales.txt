@@ -1,0 +1,11 @@
+
+INSERT INTO `obras_sociales` (`id_obra_social`,`obra_social`) VALUES (1,"Solomon"),(2,"Mccall"),(3,"Gaines"),(4,"Compton"),(5,"Cervantes"),(6,"Pennington"),(7,"Aguirre"),(8,"Landry"),(9,"Moore"),(10,"Rice");
+INSERT INTO `obras_sociales` (`id_obra_social`,`obra_social`) VALUES (11,"Spence"),(12,"Pollard"),(13,"Olson"),(14,"Camacho"),(15,"Cox"),(16,"Bush"),(17,"Palmer"),(18,"Harvey"),(19,"Parks"),(20,"Melendez");
+INSERT INTO `obras_sociales` (`id_obra_social`,`obra_social`) VALUES (21,"Hogan"),(22,"Mcgee"),(23,"Stout"),(24,"Wiggins"),(25,"Austin"),(26,"Mullen"),(27,"Daniel"),(28,"Farley"),(29,"Combs"),(30,"Barrera");
+INSERT INTO `obras_sociales` (`id_obra_social`,`obra_social`) VALUES (31,"Hoover"),(32,"Simmons"),(33,"Vazquez"),(34,"Gill"),(35,"Jimenez"),(36,"Christensen"),(37,"Haley"),(38,"Glover"),(39,"Dominguez"),(40,"Calderon");
+INSERT INTO `obras_sociales` (`id_obra_social`,`obra_social`) VALUES (41,"Booth"),(42,"Pennington"),(43,"Caldwell"),(44,"Nolan"),(45,"Sweeney"),(46,"Cooley"),(47,"Buckley"),(48,"Macias"),(49,"Gilmore"),(50,"Romero");
+INSERT INTO `obras_sociales` (`id_obra_social`,`obra_social`) VALUES (51,"Martin"),(52,"Gay"),(53,"Davenport"),(54,"Ochoa"),(55,"May"),(56,"Bryan"),(57,"Crawford"),(58,"Herman"),(59,"Morrison"),(60,"Pratt");
+INSERT INTO `obras_sociales` (`id_obra_social`,`obra_social`) VALUES (61,"Hines"),(62,"Yang"),(63,"Guy"),(64,"Cote"),(65,"Ellis"),(66,"Horne"),(67,"Lee"),(68,"Camacho"),(69,"Mckenzie"),(70,"Arnold");
+INSERT INTO `obras_sociales` (`id_obra_social`,`obra_social`) VALUES (71,"Mooney"),(72,"Gay"),(73,"Shepherd"),(74,"Robertson"),(75,"Maynard"),(76,"Barry"),(77,"Mcclure"),(78,"Ochoa"),(79,"Scott"),(80,"Robles");
+INSERT INTO `obras_sociales` (`id_obra_social`,`obra_social`) VALUES (81,"Garza"),(82,"Bowman"),(83,"Molina"),(84,"Potts"),(85,"Owens"),(86,"Gutierrez"),(87,"Clark"),(88,"Brown"),(89,"Randall"),(90,"Key");
+INSERT INTO `obras_sociales` (`id_obra_social`,`obra_social`) VALUES (91,"Ewing"),(92,"Lindsay"),(93,"Lott"),(94,"Castaneda"),(95,"Frost"),(96,"Joyner"),(97,"Ochoa"),(98,"Beach"),(99,"Sears"),(100,"Schultz");

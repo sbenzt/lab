@@ -59,5 +59,5 @@ $route['consultar_informacion'] = 'informacion';
 $route['facturacion'] = 'facturacion';
 $route['caja'] = 'caja';
 $route['configuracion'] = 'usuarios';
-$route['logout'] = 'usuarios/cerrar_sesion';
-$route['login'] = 'usuarios/iniciar_sesion';
+$route['login']  = 'usuarios/login';
+$route['logout'] = 'usuarios/logout';
