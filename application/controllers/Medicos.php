@@ -16,7 +16,8 @@ class Medicos extends CI_Controller {
 		$medicos = $this->medicos_model->get_like($string);
 		foreach($medicos as $medico){
             $array = array(
-                'value'  => $medico->medico,
+                'value'     => $medico->medico,
+                'id_medico' => $medico->id_medico
             );
             $data[]= $array;
         }

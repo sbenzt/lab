@@ -33,7 +33,6 @@
         <!-- END THEME LAYOUT STYLES -->
         <link rel="shortcut icon" href="http://keenthemes.com/preview/metronic/theme/admin_3/favicon.ico"> 
         <base href="<?=base_url()?>">
-        
         </head>
     <!-- END HEAD -->
 

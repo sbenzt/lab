@@ -7,7 +7,7 @@ class analisis_model extends CI_model {
 		'table'		  => 'analisis',
 		'pk'    	  =>'codigo_analisis',
 		'field_order' => 'analisis',
-		'fields_like' => ['analisis','nbu']
+		'fields_like' => ['codigo_analisis','analisis']
 	];
 
 	public function __construct(){

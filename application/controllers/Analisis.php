@@ -15,8 +15,9 @@ class Analisis extends CI_Controller {
 		$analisis = $this->analisis_model->get_like($string);
 		foreach($analisis as $analisis_){
             $array = array(
-                'value' 		  => $analisis_->analisis,
-                'codigo_analisis' => $analisis_->codigo_analisis
+                'value' 		  => $analisis_->codigo_analisis.' : '.$analisis_->analisis,
+                'codigo_analisis' => $analisis_->codigo_analisis,
+                'nbu' => $analisis_->nbu
             );
             $data[]= $array;
         }

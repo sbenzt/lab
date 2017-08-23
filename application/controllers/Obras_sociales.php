@@ -14,7 +14,8 @@ class Obras_sociales extends CI_Controller {
 		$obras_sociales = $this->obras_sociales_model->get_like($string);
 		foreach($obras_sociales as $obra_social){
             $array = array(
-                'value'  => $obra_social->obra_social,
+                'value'    => $obra_social->obra_social,
+                'id_obra'  => $obra_social->id_obra_social
             );
             $data[]= $array;
         }
