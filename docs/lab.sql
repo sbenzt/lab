@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-08-2017 a las 03:35:19
+-- Tiempo de generación: 25-08-2017 a las 04:52:37
 -- Versión del servidor: 10.1.25-MariaDB
 -- Versión de PHP: 7.0.21
 
@@ -115,7 +115,6 @@ INSERT INTO `analisis` (`codigo_analisis`, `analisis`, `nbu`) VALUES
 (660093, 'Samantha B. Gregory', 1),
 (660094, 'Naida V. Blackburn', 2),
 (660095, 'Harding L. Welch', 5),
-(660096, 'Alice U. Nielsen', 5),
 (660097, 'Lisandra Z. Mcdaniel', 1),
 (660098, 'Dustin M. Spencer', 2),
 (660099, 'Indigo J. Cook', 2),
@@ -151,6 +150,72 @@ CREATE TABLE `analisis_campos` (
   `id_campo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `analisis_campos`
+--
+
+INSERT INTO `analisis_campos` (`codigo_analisis`, `id_campo`) VALUES
+(660111, 55),
+(660053, 16),
+(660089, 45),
+(660114, 72),
+(660058, 76),
+(660114, 5),
+(660023, 15),
+(660035, 53),
+(660036, 77),
+(660091, 75),
+(660104, 32),
+(660049, 29),
+(660022, 1),
+(660032, 77),
+(660036, 62),
+(660035, 61),
+(660110, 33),
+(660115, 69),
+(660116, 80),
+(660075, 4),
+(660036, 63),
+(660085, 15),
+(660093, 67),
+(660080, 36),
+(660089, 56),
+(660052, 5),
+(660027, 31),
+(660070, 8),
+(660070, 40),
+(660033, 55),
+(660029, 11),
+(660100, 19),
+(660117, 72),
+(660035, 46),
+(660106, 75),
+(660119, 33),
+(660037, 55),
+(660097, 32),
+(660035, 76),
+(660100, 13),
+(660087, 42),
+(660054, 1),
+(660050, 51),
+(660052, 41),
+(660104, 11),
+(660040, 20),
+(660091, 29),
+(660051, 69),
+(660025, 54),
+(660085, 70),
+(660041, 38),
+(660078, 31),
+(660067, 52),
+(660056, 70),
+(660072, 68),
+(660033, 22),
+(660111, 66),
+(660024, 70),
+(660024, 72),
+(660024, 11);
+
 -- --------------------------------------------------------
 
 --
@@ -167,6 +232,13 @@ CREATE TABLE `caja` (
   `id_usuario` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `caja`
+--
+
+INSERT INTO `caja` (`id_caja`, `fecha`, `monto`, `pagado`, `concepto`, `id_tipo_caja`, `id_usuario`) VALUES
+(1, '2017-08-23 14:52:43', 8, 8, 'Orden ingresada - Protocolo : 662', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -176,9 +248,114 @@ CREATE TABLE `caja` (
 CREATE TABLE `campos` (
   `id_campo` int(11) NOT NULL,
   `nombre_campo` varchar(64) NOT NULL,
-  `unidad_medida` varchar(16) NOT NULL,
-  `valore_referencia` varchar(16) NOT NULL
+  `valor_referencia` varchar(16) NOT NULL,
+  `unidad_medida` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `campos`
+--
+
+INSERT INTO `campos` (`id_campo`, `nombre_campo`, `valor_referencia`, `unidad_medida`) VALUES
+(1, 'Megan', '28627', 'A6U 6K8'),
+(2, 'Rosalyn', '25306', 'G1D 3P4'),
+(3, 'Michelle', '90891', 'K4E 2W5'),
+(4, 'Kyra', '22690', 'E2J 3S3'),
+(5, 'Martha', '07756', 'F2L 8V0'),
+(6, 'Caryn', '77507', 'U1F 5C1'),
+(7, 'Carla', '99278', 'B5S 7K4'),
+(8, 'Lacey', '15870', 'Z1J 7O9'),
+(9, 'Yeo', '90459', 'L3U 1E1'),
+(10, 'Macy', '44130', 'X3U 4F2'),
+(11, 'Ainsley', '04947', 'Y9V 1J0'),
+(12, 'Renee', '07435', 'Y6W 4A5'),
+(13, 'Roanna', '16599', 'T9X 2S8'),
+(14, 'Taylor', '25996', 'H9Q 2W8'),
+(15, 'Jillian', '84503', 'I2Y 0B0'),
+(16, 'Madeson', '58629', 'I9X 1U6'),
+(17, 'Cherokee', '76981', 'D0K 8Z3'),
+(18, 'Amelia', '13574', 'K9K 8P8'),
+(19, 'Rowan', '89534', 'Y4A 9L9'),
+(20, 'Katelyn', '09870', 'V7W 7S4'),
+(21, 'Shoshana', '92760', 'N1K 4I9'),
+(22, 'Susan', '22579', 'O7A 0P8'),
+(23, 'Mallory', '81298', 'E7Y 6V0'),
+(24, 'Quon', '93103', 'P8C 1E2'),
+(25, 'Ruth', '01483', 'E1H 5H0'),
+(26, 'Raya', '41191', 'U2L 8P5'),
+(27, 'Linda', '90581', 'A1F 9U4'),
+(28, 'Orli', '24327', 'A8Z 4B5'),
+(29, 'Portia', '50193', 'T4G 2Q2'),
+(30, 'Paula', '88274', 'Q7A 2Q2'),
+(31, 'Roanna', '58259', 'I8E 2O5'),
+(32, 'Nicole', '35369', 'T9U 0E1'),
+(33, 'Margaret', '86305', 'Q5D 6T6'),
+(34, 'Jenna', '37994', 'S7U 0A1'),
+(35, 'Lael', '26724', 'N9X 5I7'),
+(36, 'Lydia', '03894', 'Q6T 1O6'),
+(37, 'Brenna', '05027', 'Q1O 6S5'),
+(38, 'Ingrid', '80555', 'F5S 5R6'),
+(39, 'Shelley', '77315', 'F6V 7W7'),
+(40, 'Athena', '51870', 'M2X 9V8'),
+(41, 'Hyacinth', '21070', 'C9Y 4C7'),
+(42, 'Xandra', '93179', 'D9F 9C1'),
+(43, 'Leilani', '91920', 'M2D 7I0'),
+(44, 'Karleigh', '91883', 'T7E 5R4'),
+(45, 'Cassady', '32679', 'W3R 4K5'),
+(46, 'Gretchen', '83351', 'F0J 7S6'),
+(47, 'Ivy', '33794', 'O2D 4A8'),
+(49, 'Brooke', '24785', 'T6R 2C0'),
+(50, 'Wynne', '94651', 'O4L 9Y6'),
+(51, 'Angela', '20751', 'G8A 2O5'),
+(52, 'Sharon', '70812', 'O1E 1O7'),
+(53, 'Sylvia', '38572', 'X5L 5G7'),
+(54, 'Whitney', '37451', 'J1O 4T9'),
+(55, 'Nita', '58498', 'P6O 6S6'),
+(56, 'Leandra', '93794', 'Q9A 2N5'),
+(57, 'Yuri', '09213', 'D3S 4E5'),
+(58, 'Marny', '03422', 'Q2B 5W0'),
+(59, 'Winter', '38194', 'E1A 5P6'),
+(60, 'Jayme', '75284', 'T9L 1E1'),
+(61, 'Lael', '63337', 'S8T 0P5'),
+(62, 'Remedios', '04766', 'L5Y 0S5'),
+(63, 'Danielle', '91536', 'C8B 7I1'),
+(64, 'Leah', '76566', 'G5F 7Y4'),
+(65, 'Ori', '87928', 'E1T 7Y3'),
+(66, 'TaShya', '95430', 'Q6F 9O3'),
+(67, 'Hanna', '54114', 'F9P 1Y6'),
+(68, 'Alexa', '12381', 'S3W 3Z2'),
+(69, 'Kimberly', '77012', 'A2C 1W8'),
+(70, 'Adena', '28082', 'U8S 8Z6'),
+(71, 'Celeste', '89339', 'C1Y 8N6'),
+(72, 'Ainsley', '98993', 'P2E 1G4'),
+(73, 'Sophia', '22279', 'U9B 7R9'),
+(74, 'Roanna', '72187', 'J5A 0W4'),
+(75, 'Bo', '35636', 'Y2X 7I1'),
+(76, 'Briar', '02507', 'N2J 2S1'),
+(77, 'Maisie', '94071', 'G2S 0X1'),
+(78, 'Fay', '70688', 'H5P 1I0'),
+(79, 'Holly', '88200', 'Q6A 9D6'),
+(80, 'Whoopi', '11294', 'F5G 2H7'),
+(81, 'Indira', '05933', 'F0C 3C4'),
+(82, 'May', '88934', 'I9H 0A2'),
+(83, 'Courtney', '95677', 'J0Q 0I2'),
+(84, 'Emerald', '91839', 'Z7D 7H1'),
+(85, 'Cameran', '86187', 'Q1N 3R2'),
+(86, 'Martina', '88878', 'M7T 3I9'),
+(87, 'Pascale', '71845', 'F2F 1A1'),
+(88, 'Jamalia', '93190', 'V6F 5Z4'),
+(89, 'Dahlia', '49002', 'T8G 2J1'),
+(90, 'Kylynn', '41365', 'N1D 6A5'),
+(91, 'Francesca', '24865', 'C2A 9S4'),
+(92, 'Eugenia', '83699', 'U9I 2A1'),
+(93, 'Latifah', '48409', 'P7Z 6K5'),
+(94, 'Nell', '35379', 'T3L 1D2'),
+(95, 'Kyra', '16262', 'V3M 2H3'),
+(96, 'Petra', '66902', 'V4E 3H9'),
+(97, 'Michelle', '92475', 'M1V 2I2'),
+(98, 'Guinevere', '86359', 'I6B 5F9'),
+(99, 'Anika', '45648', 'X4V 0H2'),
+(100, 'Ila', '32413', 'Y3H 2Y4');
 
 -- --------------------------------------------------------
 
@@ -215,13 +392,11 @@ INSERT INTO `ingresados` (`id_ingresado`, `id_orden`, `codigo_analisis`, `autori
 (19, 21, 660085, 1),
 (20, 21, 660071, 0),
 (21, 21, 660027, 1),
-(22, 22, 660085, 1),
 (23, 22, 660071, 0),
-(24, 22, 660027, 1),
 (25, 24, 660024, 0),
-(26, 24, 660043, 0),
-(27, 24, 660077, 0),
-(28, 25, 660024, 1);
+(26, 24, 660111, 0),
+(28, 25, 660033, 1),
+(29, 25, 660030, 0);
 
 -- --------------------------------------------------------
 
@@ -231,8 +406,21 @@ INSERT INTO `ingresados` (`id_ingresado`, `id_orden`, `codigo_analisis`, `autori
 
 CREATE TABLE `ingresados_campos` (
   `id_ingresado` int(11) NOT NULL,
-  `id_campo` int(11) NOT NULL
+  `id_campo` int(11) NOT NULL,
+  `valor_obtenido` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `ingresados_campos`
+--
+
+INSERT INTO `ingresados_campos` (`id_ingresado`, `id_campo`, `valor_obtenido`) VALUES
+(26, 55, 'test1'),
+(26, 66, 'test2'),
+(28, 66, ''),
+(25, 70, 'campo1'),
+(25, 72, 'campo2'),
+(25, 11, 'campo3');
 
 -- --------------------------------------------------------
 
@@ -509,8 +697,8 @@ INSERT INTO `ordenes` (`id_orden`, `protocolo`, `nombre_paciente`, `apellido_pac
 (20, 658, 'test ', 'completo', '546', '456', '2017-08-23', 1, 1, 1),
 (21, 659, 'test caja 0', 'completo', '546', '456', '2017-08-23', 1, 1, 1),
 (22, 660, 'test caja 0', 'completo', '546', '456', '2017-08-23', 1, 1, 1),
-(24, 661, 'Muaricio', 'Gil', '5646', '464564', '2017-08-23', 95, 107, 1),
-(25, 662, 'marcelo', 'piñeda', '4646', '56464', '2017-08-23', 38, 108, 1);
+(24, 661, 'Muaricio', 'Gil', '5646', '464564', '2017-08-24', 95, 107, 1),
+(25, 662, 'sam', 'testin', '4544', '6666', '2017-08-23', 1, 40, 1);
 
 -- --------------------------------------------------------
 
@@ -673,17 +861,17 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `caja`
 --
 ALTER TABLE `caja`
-  MODIFY `id_caja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_caja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `campos`
 --
 ALTER TABLE `campos`
-  MODIFY `id_campo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_campo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 --
 -- AUTO_INCREMENT de la tabla `ingresados`
 --
 ALTER TABLE `ingresados`
-  MODIFY `id_ingresado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_ingresado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT de la tabla `medicos`
 --
