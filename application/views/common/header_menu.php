@@ -97,7 +97,7 @@
                                             </a>
                                         </li>
                                         <li aria-haspopup="true" class="menu-dropdown mega-menu-dropdown  ">
-                                            <a href="<?=base_url('ingresar_resultados')?>"> Ingresar Resultados
+                                            <a href="<?=base_url('buscar_orden')?>"> Ingresar Resultados
                                                 <span class="arrow"></span>
                                             </a>
                                         </li>

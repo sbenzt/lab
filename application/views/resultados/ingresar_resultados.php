@@ -62,34 +62,53 @@
                         <div class="portlet-title">
                             <div class="caption">
                                 <i class="icon-speech font-green"></i>
-                                <span class="caption-subject bold font-green uppercase">Paciente</span>
+                                <span class="caption-subject bold font-green uppercase">Orden</span>
                             </div>
                         </div>
-                        <div class="portlet-body form">
+                          <?php if(count($ordenes) > 0): ?>
+                        <div class="portlet-body">
                             <div id="sample_1_wrapper" class="dataTables_wrapper">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <table class="table table-striped table-bordered table-hover " id="sample_1" role="grid" aria-describedby="sample_1_info" style="width: 1094px;">
+                                        <!-- { Tabla ordenes } -->
+                                        <table class="table table-striped table-bordered table-hover dataTable dtr-inline" id="sample_1" role="grid" aria-describedby="sample_1_info" style="width: 1094px;">
                                             <thead>
-                                                <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" style="width: 163px;" aria-label="Name: activate to sort column descending" aria-sort="ascending">Name</th><th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" style="width: 250px;" aria-label="Position: activate to sort column ascending">Position</th><th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" style="width: 115px;" aria-label="Office: activate to sort column ascending">Office</th><th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" style="width: 62px;" aria-label="Age: activate to sort column ascending">Age</th><th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" style="width: 123px;" aria-label="Start date: activate to sort column ascending">Start date</th><th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" style="width: 88px;" aria-label="Salary: activate to sort column ascending">Salary</th></tr>
+                                                <th rowspan="1" colspan="1">Protocolo</th>
+                                                    <th rowspan="1" colspan="1">Apellido y Nombre</th>
+                                                    <th rowspan="1" colspan="1">Nº de orden</th>
+                                                    <th rowspan="1" colspan="1">Nº de afiliado</th>
+                                                    <th rowspan="1" colspan="1">Fecha</th>
+                                                    <th rowspan="1" colspan="1">Obra Social</th>
+                                                    <th rowspan="1" colspan="1">Modificar</th>
+                                                    <th rowspan="1" colspan="1">Eliminar</th>
                                             </thead>
+
                                             <tbody>
-                                           
-                                            <tr role="row" class="odd">
-                                                    <td tabindex="0" class="sorting_1">Airi Satou</td>
-                                                    <td><a href="<?=base_url('resultados/protocolo/')?>54654">Juan Roman</a></td>
-                                                    <td>Riquelme</td>
-                                                    <td>33</td>
-                                                    <td>2008/11/28</td>
-                                                    <td>$162,700</td>
-                                                </tr>
-                                        
+                                                
+                                                    <?php foreach ($ordenes as $orden): ?>
+                                                    <tr role="row" class="odd">
+                                                            <td tabindex="0" class="sorting_1"><?=$orden['protocolo']?></td>
+                                                            <td><a href="<?=base_url('resultados/protocolo/')?><?=$orden['protocolo']?>"><?=$orden['ayn']?></a></td>
+                                                            <td><?=$orden['norden']?></td>
+                                                            <td><?=$orden['nafiliado']?></td>
+                                                            <td><?=$orden['fecha']?></td>
+                                                            <td><?=$orden['obra_social']?></td>
+                                                            <td><i class="fa fa-pencil-square-o fa-2" aria-hidden="true"></i></td>
+                                                            <td><i class="fa fa-trash fa-2" aria-hidden="true"></i></td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
                                             </tbody>
                                         </table>
+                                        <!-- { /Tabla ordenes } -->
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    <?php else: ?>
+                        <div class="alert alert-danger">
+                          <strong>Resultado:</strong> no se encontró ninguna orden.
+                        </div> 
+                    <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -104,8 +123,10 @@
                                 <i class="icon-settings font-dark"></i>
                                 <span class="caption-subject bold uppercase">Listado de análisis</span>
                             </div>
+                            <button class="btn btn-success pull-right">Nuevo</button>
                         </div>
-
+                        
+                        <?php if(count($ingresados) > 0): ?>
                         <div class="portlet-body">
 
                             <div id="sample_1_wrapper" class="dataTables_wrapper">
@@ -116,19 +137,19 @@
                                                 <tr role="row">
                                                     <th class="sorting_asc" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" style="width: 163px;" aria-label="Name: activate to sort column descending" aria-sort="ascending">Analisis</th>
                                                     <th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" style="width: 250px;" aria-label="Position: activate to sort column ascending">Autorizar</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" style="width: 62px;" aria-label="Age: activate to sort column ascending">Eliminar</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" style="width: 62px;" aria-label="Age: activate to sort column ascending">Imprimir</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" style="width: 62px;" aria-label="Age: activate to sort column ascending"></th>
+                                                    <th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" style="width: 62px;" aria-label="Age: activate to sort column ascending"></th>
                                                     </tr>
                                             </thead>
                                             <tbody>
-                                            <?php for($i=1;$i<=5;$i++): ?>
+                                            <?php foreach($ingresados as $ingresado): ?>
                                             <tr role="row" class="odd">
-                                                    <td tabindex="0" class="sorting_1"><a class="btn green btn-outline sbold" data-toggle="modal" href="#large"> View Demo Bilirubina</a></td>
-                                                    <td><input type="checkbox" name=""></td>
+                                                    <td tabindex="0" class="sorting_1"><a class="btn green btn-outline sbold open-modal"  data-toggle="modal" data-id-ingresado="<?=$ingresado['id_ingresado']?>" data-cod="<?=$ingresado['codigo_analisis']?>"  href="#large"><?=$ingresado['codigo_analisis'].' : '.$ingresado['analisis']?></a></td>
+                                                    <td><?= ($ingresado['autorizado'] == 1) ? '<input type="checkbox" checked id="autorizar">' : '<input type="checkbox" id="autorizar">' ?></td>
                                                     <td><button class="btn btn-danger">Eliminar</button></td>
                                                     <td><button class="btn btn-warning">Imprimir</button></td>
                                                 </tr>
-                                            <?php endfor; ?>
+                                            <?php endforeach; ?>
                                             <tr><td></td><td></td><td></td><td collspan="4"><button class="btn btn-success">Imprimir todos</button></td></tr>
                                             </tbody>
                                         </table>
@@ -136,6 +157,11 @@
                                 </div>
                             </div>
                         </div>
+                         <?php else: ?>
+                            <div class="alert alert-danger">
+                                <strong>Resultado:</strong> no se encontró ningun análisis ingresado.
+                            </div> 
+                        <?php endif; ?>
                     <!-- END EXAMPLE TABLE PORTLET-->
                     </div>
                 </div>

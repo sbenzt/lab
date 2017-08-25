@@ -6,7 +6,6 @@ class analisis_model extends CI_model {
 	private $data = [
 		'table'		  => 'analisis',
 		'pk'    	  =>'codigo_analisis',
-		'field_order' => 'analisis',
 		'fields_like' => ['codigo_analisis','analisis']
 	];
 

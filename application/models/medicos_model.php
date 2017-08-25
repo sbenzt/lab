@@ -6,7 +6,6 @@ class medicos_model extends CI_model {
 	private $data = [
 		'table'		  => 'medicos',
 		'pk'    	  =>'id_medico',
-		'field_order' => 'medico',
 		'fields_like' => ['id_medico','medico']
 	];
 

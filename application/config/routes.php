@@ -54,7 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['ingresar_ordenes'] = 'ordenes';
-$route['ingresar_resultados'] = 'resultados';
+$route['buscar_orden'] = 'resultados/busqueda';
 $route['consultar_informacion'] = 'informacion';
 $route['facturacion'] = 'facturacion';
 $route['caja'] = 'caja';

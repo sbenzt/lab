@@ -29,11 +29,6 @@ class Ordenes extends CI_Controller {
 		$this->load->view('common/footer');
 	}
 
-	public function protocolo(){
-		$protocolo = $this->input->get('protocolo');
-		$result    = $this->ordenes_model->get(['protocolo' => $protocolo]);
-		echo ($result) ? $protocolo : 0;	
-	}
 
 	public function nuevo(){
 		$data_orden    = $this->input->post('data_orden');
@@ -58,6 +53,7 @@ class Ordenes extends CI_Controller {
 		$data_orden['id_medico']  = $id_medico;
 		$data_orden['fecha']      = date('Y-m-d');
 		$data_orden['id_usuario'] = 1;
+
 
 		//Si se inserta la orden -> insertar analisis en ingresados
 		$result   = $this->ordenes_model->insert($data_orden);
@@ -86,6 +82,20 @@ class Ordenes extends CI_Controller {
 		}
 
 		echo $result;
+		
+	}
+
+	/**********************************************/
+	/* METODOS TIPO AJAX
+	***********************************************/
+
+	public function protocolo_ajax(){
+		$protocolo = $this->input->get('protocolo');
+		$result    = $this->ordenes_model->get(['protocolo' => $protocolo]);
+		echo ($result) ? $protocolo : 0;	
+	}
+
+	public function orden_ajax(){
 		
 	}
 }

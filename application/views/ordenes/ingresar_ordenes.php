@@ -31,12 +31,12 @@
                                 <a href="javascript:;" class="collapse" data-original-title="" title=""><i class="fa fa-tasks fa-2" aria-hidden="true" style="color:white"></i></a>
                             </div>
                         </div>
-                        <div class="portlet-body portlet-empty" style="display:block;"><div class="slimScrollDiv" style="position: relative; overflow: ; width: auto; height: 520px;"><div class="scroller" style="height: 500px; overflow:; width: auto;" data-rail-visible="1" data-initialized="1">
+                        <div class="portlet-body portlet-empty" style="display:block;"><div class="slimScrollDiv" style="position: relative; overflow: ; width: auto; height: 640px;"><div class="scroller" style="height: 620px; overflow:; width: auto;" data-rail-visible="1" data-initialized="1">
                             <!-- {texto} -->
                             <div class="col-md-12">
                                 <h3>Formulario para ingresar órdenes</h3>
                                 <p> 
-                                    Permite el ingreso de una orden con sus correspondientes listado de análisis, se almacena la fecha automaticamente.
+                                    Permite el ingreso de una orden con su correspondiente listado de análisis.
                                 </p>
                                 <dl>
                                     <dt><h4>Descripción de los campos</h4></dt>
@@ -55,8 +55,15 @@
                                     <dt>Número de afiliado</dt>
                                     <dd>campo de texto opcional</dd>
                                     <dt>Análisis</dt>
-                                    <dd>campo de texto autocompletado: permite buscar por código o nombre del analisis, deberá seleccionar e ingresar al menos un analisis. Campo obligatorio, no puede ser vacio sino se enviara un mensaje de error. </dd>
-                                    
+                                    <dd>campo de texto autocompletado: permite buscar por código o nombre del analisis, deberá seleccionar e ingresar al menos un analisis. Campo obligatorio, no puede ser vacio sino se enviara un mensaje de error.
+                                    Permite autorizar un análisis tildando el checkbox
+                                    </dd>
+                                    <dt>Calcular y guardar en caja</dt>
+                                    <dd>campo checkbox : permite calcular el precio de todos los analisis ingresados utilizando el NBU, el monto calculado se mostrara en el campo 'PRECIO TOTAL' y sera almacenado en el sistema si éste es mayor que 0 puediendo ser modicable. El resultado se mostrará en la pestaña 'CAJA' con el número de protocolo correspondiente a la orden ingresada. Solo permite valores numéricos.</dd>
+                                    <dt>Precio total</dt>
+                                    <dd>campo de texto : almacena el resultado de la suma de los analisis en caso que el checkbox 'CALCULAR Y GUARDAR EN CAJA' esté tildado. El valor puede ser modificable y solo permite valores numéricos.</dd>
+                                    <dt>Precio total</dt>
+                                    <dd>campo de texto : almacena el pago en caso de ser necesario. Solo permite valores numéricos </dd>
                                   </dl>
                             </div>
                             <!-- {/texto} -->

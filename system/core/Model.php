@@ -56,14 +56,16 @@ class CI_Model {
 
 	private $table;
 	private $pk;
-	private $field_order;
 	private $fields_like;
 
-	public function __construct($data)
+	public function __construct($data = null)
 	{
-		foreach ($data as $key => $value) {
+		if(!is_null($data)){
+			foreach ($data as $key => $value) {
 			$this->$key = $value;
+			}
 		}
+		
 		log_message('info', 'Model Class Initialized');
 	}
 
@@ -86,15 +88,26 @@ class CI_Model {
 		return get_instance()->$key;
 	}
 
-	public function get($condition = null){
+
+
+	public function get($condition = null, $orderBy = null, $order = null ,$limit = null){
+
+
 		$this->db->select('*');
 		$this->db->from($this->table);
 		
 		if($condition != null || !empty($condition))
 			$this->db->where($condition);
-		$this->db->order_by($this->field_order);
+		
+		if( ($orderBy != null || !empty($orderBy)) && ($orderBy != null || !empty($orderBys)))
+			$this->db->order_by($orderBy,$order);
+
+		if($limit != null || !empty($limit))
+			$this->db->limit($limit);
+
 		$query = $this->db->get();
 		return $query->result();
+
 	}
 
 	public function get_id($id = null){

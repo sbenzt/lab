@@ -6,7 +6,6 @@ class usuarios_model extends CI_model {
 	private $data = [
 		'table'		  => 'usuarios',
 		'pk'    	  =>'id_usuario',
-		'field_order' => 'apellido,nombre',
 		'fields_like' => ['nombre','apellido','mail','id_tipo_usuario']
 	];
 

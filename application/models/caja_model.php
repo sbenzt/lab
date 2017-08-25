@@ -6,7 +6,6 @@ class caja_model extends CI_model {
 	private $data = [
 		'table'		  => 'caja',
 		'pk'    	  =>'id_caja',
-		'field_order' => 'fecha',
 		'fields_like' => ['fecha','monto','concepto']
 	];
 

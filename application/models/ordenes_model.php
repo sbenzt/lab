@@ -6,7 +6,6 @@ class ordenes_model extends CI_model {
 	private $data = [
 		'table'		  => 'ordenes',
 		'pk'    	  =>'id_orden',
-		'field_order' => 'fecha,apellido_paciente,nombre_paciente',
 		'fields_like' => ['protocolo','nombre_paciente','apellido_paciente','fecha','id_obra_social','id_medico','id_usuario']
 	];
 

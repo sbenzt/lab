@@ -6,7 +6,6 @@ class obras_sociales_model extends CI_model {
 	private $data = [
 		'table'		  => 'obras_sociales',
 		'pk'    	  =>'id_obra_social',
-		'field_order' => 'obra_social',
 		'fields_like' => ['obra_social']
 	];
 

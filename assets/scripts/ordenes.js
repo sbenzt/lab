@@ -66,7 +66,7 @@ function verficar_protocolo(protocolo){
 		protocolo_ = false;
 	}
 	else{
-		$.get(base_url + 'ordenes/protocolo',{protocolo : protocolo},function(data){
+		$.get(base_url + 'ordenes/protocolo_ajax',{protocolo : protocolo},function(data){
 			if(data == protocolo){
 				input.attr('data-erform',1);
 				$('#form_protocolo').addClass('has-error');
